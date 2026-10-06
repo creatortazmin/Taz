@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Migratory Bird Facts</title>
+</head>
+<body>
+  <h1>World Migratory Bird Day – October 10</h1>
+  <div id="fact">Click the button to see a fact!</div>
+  <button onclick="showFact()">Show Fact</button>
+
+  <!-- 👇 Paste your script here, just before closing </body> -->
+  <script>
+    const facts = [
+      "The Arctic Tern travels about 71,000 km annually, the longest migration of any bird.",
+      "Bar-headed Geese fly over the Himalayas at altitudes above 29,000 feet.",
+      "Sandhill Cranes migrate in flocks that can number thousands of birds.",
+      "Migratory birds help control insect populations and spread plant seeds.",
+      "Artificial lights at night disorient migratory birds, causing collisions and energy loss.",
+      "Reducing light pollution can save millions of birds during migration seasons."
+    ];
+
+    function showFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById("fact").innerText = facts[randomIndex];
+    }
+  </script>
+</body>
+</html>
