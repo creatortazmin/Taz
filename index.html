@@ -3,21 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>Migratory Bird Facts</title>
+
+  <!-- 🌌 Styling -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      /* If the image is in the same folder as index.html */
+      background: url('./birds-night-sky.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      margin: 0;
+      padding: 50px;
+    }
+
+    h1 {
+      background-color: rgba(0,0,0,0.6);
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    #fact {
+      font-size: 1.2em;
+      margin: 20px;
+      background-color: rgba(0,0,0,0.5);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #45a29e;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: #66fcf1;
+      color: #0b0c10;
+    }
+  </style>
 </head>
 <body>
-  <h1>World Migratory Bird Day – October 10</h1>
+  <h1>World Migratory Bird Day 🐦 October 10</h1>
   <div id="fact">Click the button to see a fact!</div>
   <button onclick="showFact()">Show Fact</button>
 
-  <!-- 👇 Paste your script here, just before closing </body> -->
+  <!-- 🐦 Light Pollution Facts -->
   <script>
     const facts = [
-      "The Arctic Tern travels about 71,000 km annually, the longest migration of any bird.",
-      "Bar-headed Geese fly over the Himalayas at altitudes above 29,000 feet.",
-      "Sandhill Cranes migrate in flocks that can number thousands of birds.",
-      "Migratory birds help control insect populations and spread plant seeds.",
-      "Artificial lights at night disorient migratory birds, causing collisions and energy loss.",
-      "Reducing light pollution can save millions of birds during migration seasons."
+      "Blinds Navigation Systems: Nocturnal migrants rely on the stars and moon for navigation, but bright city lights mask these natural cues and leave birds completely disoriented.",
+      "Creates 'Fatal Light Traps': Artificial lights draw birds off course and trap them in urban areas, where they circle illuminated structures until they drop from total exhaustion.",
+      "Triggers Deadly Window Collisions: Disoriented birds drawn into cities crash into glass windows and mirrored building facades, causing hundreds of millions of deaths each year.",
+      "Alters Internal Biological Clocks: Artificial light at night disrupts birds' circadian rhythms, tricking their bodies into miscalculating day length and seasonal changes.",
+      "Misaligns Migration Timing: Distorted internal clocks cause birds to leave for their journeys too early or too late, meaning they miss optimal weather and peak food availability.",
+      "Degrades Stopover Habitats: Light pollution forces birds to land in crowded, low-quality urban spaces instead of safe, resource-rich natural habitats to rest and refuel.",
+      "Increases Predation Risks: Bright environments make resting or feeding birds highly visible to urban predators like feral cats and birds of prey.",
+      "Drains Critical Energy Reserves: The extra time spent circling lights, correcting course, and avoiding bright areas burns up energy stores needed to survive long-distance flights.",
+      "Disturbs Essential Night Rest: Continuous light exposure prevents migratory birds from getting deep sleep during stopovers, leaving them weak for the next leg of their journey."
     ];
 
     function showFact() {
