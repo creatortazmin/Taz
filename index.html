@@ -63,7 +63,6 @@
   <div class="section">
     <p>
       Have you ever wondered how light pollution affects migratory birds?<br>
-      
       Most songbirds rely on the stars and dark skies to navigate thousands of miles across the globe. 
       But as our cities grow, bright artificial light at night (ALAN) spills into the sky, creating a glowing maze that masks the natural darkness. 
       This constant urban glare throws off their internal clocks, disorienting night-flying species and turning dark skies into a dangerous journey.
@@ -73,15 +72,15 @@
   <!-- Did You Know Section -->
   <div class="section">
     <h2>Did You Know? 🌌</h2>
-    <div id="didyouknow" class="fact-box">Click the button to see a fact!</div>
-    <button onclick="showDidYouKnow()">Show Fact</button>
+    <div id="didyouknow" class="fact-box">Click the button to see the first fact!</div>
+    <button onclick="showDidYouKnow()">Next Fact</button>
   </div>
 
   <!-- Impacts Section -->
   <div class="section">
     <h2>How Light Pollution Impacts Birds</h2>
-    <div id="impact" class="fact-box">Click the button to see an impact!</div>
-    <button onclick="showImpact()">Show Impact</button>
+    <div id="impact" class="fact-box">Click the button to see the first impact!</div>
+    <button onclick="showImpact()">Next Impact</button>
   </div>
 
   <!-- 🐦 Facts Scripts -->
@@ -101,14 +100,17 @@
       "Traps seabirds on the ground: Birds like petrels and shearwaters get blinded by land lights, crash-land, and often can't fly back up, leaving them helpless against cars and predators."
     ];
 
+    let didYouKnowIndex = 0;
+    let impactIndex = 0;
+
     function showDidYouKnow() {
-      const randomIndex = Math.floor(Math.random() * didYouKnowFacts.length);
-      document.getElementById("didyouknow").innerText = didYouKnowFacts[randomIndex];
+      document.getElementById("didyouknow").innerText = didYouKnowFacts[didYouKnowIndex];
+      didYouKnowIndex = (didYouKnowIndex + 1) % didYouKnowFacts.length;
     }
 
     function showImpact() {
-      const randomIndex = Math.floor(Math.random() * impactFacts.length);
-      document.getElementById("impact").innerText = impactFacts[randomIndex];
+      document.getElementById("impact").innerText = impactFacts[impactIndex];
+      impactIndex = (impactIndex + 1) % impactFacts.length;
     }
   </script>
 </body>
