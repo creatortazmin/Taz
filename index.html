@@ -23,10 +23,18 @@
       display: inline-block;
     }
 
-    #fact {
+    .section {
+      margin: 40px auto;
+      max-width: 800px;
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .fact-box {
       font-size: 1.2em;
       margin: 20px;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.4);
       padding: 15px;
       border-radius: 8px;
     }
@@ -39,6 +47,7 @@
       color: white;
       cursor: pointer;
       border-radius: 6px;
+      margin-top: 10px;
     }
 
     button:hover {
@@ -49,22 +58,56 @@
 </head>
 <body>
   <h1>World Migratory Bird Day 🐦 October 10</h1>
-  <div id="fact">Click the button to see a fact!</div>
-  <button onclick="showFact()">Show Fact</button>
 
-  <!-- 🐦 Light Pollution Facts -->
+  <!-- Intro Section -->
+  <div class="section">
+    <p>
+      Have you ever wondered how light pollution affects migratory birds?<br>
+      Most songbirds rely on the stars and dark skies to navigate thousands of miles across the globe. 
+      But as our cities grow, bright artificial light at night (ALAN) spills into the sky, creating a glowing maze that masks the natural darkness. 
+      This constant urban glare throws off their internal clocks, disorienting night-flying species and turning dark skies into a dangerous journey.
+    </p>
+  </div>
+
+  <!-- Did You Know Section -->
+  <div class="section">
+    <h2>Did You Know? 🌌</h2>
+    <div id="didyouknow" class="fact-box">Click the button to see a fact!</div>
+    <button onclick="showDidYouKnow()">Show Fact</button>
+  </div>
+
+  <!-- Impacts Section -->
+  <div class="section">
+    <h2>How Light Pollution Impacts Birds</h2>
+    <div id="impact" class="fact-box">Click the button to see an impact!</div>
+    <button onclick="showImpact()">Show Impact</button>
+  </div>
+
+  <!-- 🐦 Facts Scripts -->
   <script>
-    const facts = [
-      "Pulls them off course: Bright city lights glow so far into the night sky that migrating birds see them from miles away and fly toward the city instead of following their normal path.",
+    const didYouKnowFacts = [
+      "Visible from 125 Miles Away: Flying birds can spot city skyglow on the horizon over 125 miles (200 km) away—meaning there is almost nowhere in heavily urbanized regions where they escape artificial light.",
+      "Up to 1 Billion Collision Fatalities: Scientists estimate between 100 million and 1 billion birds die every year in the U.S. alone from crashing into lit structures.",
+      "Low & Mid-Rise Danger: While massive skyscrapers get the most attention, the vast majority of deadly bird collisions actually happen at low- and medium-rise buildings.",
+      "Energy Drain is the Real Killer: It’s often not the light itself that kills birds immediately—it’s the exhaustion from flying around confused in bright lights until they fall victim to urban predators or starvation."
+    ];
+
+    const impactFacts = [
+      "Distracts them off track: Bright city lights glow so far into the night sky that migrating birds see them from miles away and fly toward the city instead of following their normal path.",
       "Leads to deadly crashes: Night-flying birds get drawn straight to brightly lit buildings and hit glass windows or walls, which often kills them.",
       "Tricks whole flocks into danger: When lost birds panic and chirp in the dark, nearby birds follow the noise—accidentally pulling the whole group toward the bright buildings.",
       "Tires them out to exhaustion: Birds get trapped circling around bright lights, wasting precious fuel and energy they need to finish their journey or escape danger.",
       "Traps seabirds on the ground: Birds like petrels and shearwaters get blinded by land lights, crash-land, and often can't fly back up, leaving them helpless against cars and predators."
     ];
 
-    function showFact() {
-      const randomIndex = Math.floor(Math.random() * facts.length);
-      document.getElementById("fact").innerText = facts[randomIndex];
+    function showDidYouKnow() {
+      const randomIndex = Math.floor(Math.random() * didYouKnowFacts.length);
+      document.getElementById("didyouknow").innerText = didYouKnowFacts[randomIndex];
+    }
+
+    function showImpact() {
+      const randomIndex = Math.floor(Math.random() * impactFacts.length);
+      document.getElementById("impact").innerText = impactFacts[randomIndex];
     }
   </script>
 </body>
